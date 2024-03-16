@@ -1,4 +1,6 @@
 # Blood Donor
+#### Notes
+This application isn't full fledged and isn't deployed. I am sporadically working on this project. If you have ideas, suggestions or anything you wish to modify, please do so. I would greatly appreciate active community work. Thanks.
 #### Video Demo: https://youtu.be/MeJmAiVGJL8
 #### Motivation
 Every day 12,000 people in India die due to the sheer lack of donated blood. India collects 11 million units of blood but needs 15 million units, so there’s a deficit of 4 million units. Seeing these shocking statistics, I decided to create Blood Donor to make it easier for donating and recieving blood.
