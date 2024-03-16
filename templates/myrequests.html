@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h3>{{ message }}</h3>    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Blood Type</th>
+                <th>Location</th>
+                <td>{% if key == 'N/A' %}N/A{% else %}<a href="{{ item.prescription }}">Link</a>{% endif %}</td>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Match</th>
+            </tr>
+        </thead>
+        {% for item in list %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.blood_type }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.prescription }}</td>
+                <td>{{ item.phone_number }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.matched }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+{% block script %}{% endblock %}

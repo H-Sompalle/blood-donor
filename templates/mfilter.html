@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h3 style="padding: 30px;">Filter requests</h3>
+    <form action="/myrequests" method="post" id="request_form" enctype="multipart/form-data">
+        <div class="mb-3">
+            <select class="form-select form-control mx-auto w-auto" name="blood_type">
+                <option disabled selected>Blood Type</option>
+                {% for option in options %}
+                    <option value="{{ option }}"> {{ option }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="location" name="location" placeholder="Location" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+    </form>
+{% endblock %}
+{% block script %}
+    <script>
+        let autocomplete;
+
+        function initAutocomplete() {
+            autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById("location"),
+                {
+                    types: ["hospital"],
+                    fields: ["geometry", "name"]
+                }
+            )
+            autocomplete.addListener("place_changed", onPlaceChanged);
+        }
+
+        function onPlaceChanged() {
+            var place = autocomplete.getPlace();
+
+            if (!place.geometry) {
+                document.getElementById("location").innerHTML = "Enter a place";
+                document.getElementById("location").placeholder = "Enter a place";
+            } else {
+                document.getElementById("location").innerHTML = place.name;
+            }
+        }
+    </script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8pam6SRQWxKfyFVKoq9P8PABG1YxkRLo&libraries=places&callback=initAutocomplete"
+            async defer>
+    </script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h3 style="padding: 30px;">Match a request</h3>
+    <form action="/match" method="post" id="match_form">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="match" name="match" placeholder="Request ID" type="number">
+        </div>
+        <div class="mb-3">
+            <p>This is action is irreversible and your request will not be seen by anyone else but you. The prescription shall also be deleted from our servers.</p>
+        </div>
+        <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+    </form>
+{% endblock %}
+{% block script %}{% endblock %}

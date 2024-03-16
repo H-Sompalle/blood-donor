@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h3>{{ message }}</h3>    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Blood Type</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        {% for item in list %}
+            <tr>
+                <td>{{ item.type }}</td>
+                <td>{{ item.blood_type }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.phone_number }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.request_id }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+{% block script %}{% endblock %}

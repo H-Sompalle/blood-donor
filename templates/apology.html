@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2>Error!</h2>
+    <!-- From freeiconspng.com -->
+    <img src="https://www.freeiconspng.com/uploads/error-icon-3.png" width="350" alt="Error Message">
+    <h3>{{ message }}</h3>
+    <a href="{{ link }}"">{{ redirect_text }}</a>
+{% endblock %}
+{% block script %}{% endblock %}
